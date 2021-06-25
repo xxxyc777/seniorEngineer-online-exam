@@ -69,7 +69,41 @@
           v-decorator="['password2', {rules: [{ required: true, message: '至少6位密码，区分大小写' }, { validator: this.handlePasswordCheck }], validateTrigger: ['change', 'blur']}]"
         ></a-input>
       </a-form-item>
-
+      
+      <a-form-item style=" margin-bottom:5px ">
+        <template>
+          <div  v-decorator="['valiQuestion', {rules: [{ required: true}], validateTrigger: ['change', 'blur']}]">
+            <a-select default-value="请选择验证问题" style="width: 300px" @change="handleChange">
+              <a-select-option value="请选择验证问题" disabled>
+                请选择验证问题
+              </a-select-option>              
+              <a-select-option value="你父亲的名字是什么？">
+                你父亲的名字是什么？
+              </a-select-option>
+              <a-select-option value="你母亲的名字是什么？">
+                你母亲的名字是什么？
+              </a-select-option>
+              <a-select-option value="对你影响最深的人是谁？">
+                对你影响最深的人是谁
+              </a-select-option>
+              <a-select-option value="你小学的名字是什么？">
+                你小学的名字是什么？
+              </a-select-option>
+            </a-select>
+          </div>
+        </template>
+      </a-form-item>
+      
+      <a-form-item>
+            <a-input
+              size="large"
+              type="text"
+              placeholder="请输入你的回答"
+              v-decorator="['valiAnswer', {rules: [{ required: true, message: '请输入你的回答' }], validateTrigger: ['change', 'blur']}]"
+            ></a-input>
+      </a-form-item>      
+      
+      
       <a-form-item>
         <a-input
           size="large"
